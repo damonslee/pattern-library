@@ -13,7 +13,10 @@ namespace CommandFactory
 
         public ICommand Parse(string[] args)
         {
-            string commandName = args[0];
+            string commandName = string.Empty;
+           
+            if(args.Length > 0) commandName = args[0];
+
             ICommand command = Find(commandName);
 
             return ((ICommandFactory)command).Create(args);
@@ -21,7 +24,14 @@ namespace CommandFactory
 
         private ICommand Find(string commandName)
         {
-            return _commands.FirstOrDefault(c => c.CommandName == commandName);
+            ICommand cmd;
+
+            if (string.IsNullOrEmpty(commandName))
+                cmd = _commands.FirstOrDefault();
+            else
+                cmd = _commands.FirstOrDefault(c => c.CommandName == commandName);
+
+            return cmd;
         }
     }
 }
