@@ -2,7 +2,7 @@
 
 # https://www.javatips.net/api/gdata-java-client-master/java/sample/gbase/cmdline/CommandFactory.java 참고
 
-/* Copyright (c) 2006 Google Inc.
+ * Copyright (c) 2006 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
 
 package sample.gbase.cmdline;
 
 import java.net.MalformedURLException;
 import java.util.Arrays;
 
-/**
+
  * Creates and initializes commands given command-line
  * arguments.
  *
@@ -30,7 +29,7 @@ import java.util.Arrays;
  * how the API works. All it does is parse command-line
  * arguments and call some setters on the different <code>*Command</code>
  * objects. Have a look at the <code>*Command</code> classes instead.
- */
+
 class CommandFactory {
 
   /**
@@ -46,6 +45,7 @@ class CommandFactory {
    * @param args command-line arguments
    * @return a new Command object, properly initialized and ready to use
    */
+   
   public static Command createCommand(String[] args) {
     if (args.length == 0) {
       throw error("Please give first the command you want to run (" +
